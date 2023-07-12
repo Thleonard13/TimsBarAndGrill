@@ -67,6 +67,8 @@
       padding: 5vw;
   }
 
+  /* GLOBAL HEADER STYLINGS */
+
   header {
     z-index: 4;
     position: fixed;
@@ -137,6 +139,8 @@
       display: none;
   }
 
+  /* HERO SECTION STYLINGS */
+
   #hero {
       height: 100vh;
       position: relative;
@@ -172,6 +176,8 @@
     bottom: -40px;
     margin: auto;
   }
+
+  /* HOME PAGE STYLINGS */
 
   #banner {
       text-align: center;

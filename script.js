@@ -5,6 +5,7 @@ const lunchBtn = document.getElementById('lunch-btn')
 const dinnerBtn = document.getElementById('dinner-btn')
 const domMenu = document.getElementById('menu')
 
+//  toggles the menu page between breakfast, lunch, and dinner
 const togglesMenus = (menu, menuName) => {
     let menuItems = document.querySelectorAll('.menu-item')
     menuItems.forEach(item => item.remove())

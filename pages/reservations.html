@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/cc65d92689.js" crossorigin="anonymous"></script>
     <script src="../mobileMenu.js" type="module" defer></script>
     <title>Tim's Bar & Grill</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png">
 </head>
 <body>
     <header>
@@ -37,11 +38,11 @@
     </header>
     <main class="reservations-page">
         <h2>Reserve a Table</h2>
-        <form>
+        <form id="appointment-form">
             <label for ="name">Name</label>
             <input type="text" id="name" name="name" required/>
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/>
+            <input type="tel" id="phone" name="phone" required/>
             <label>Number of People</label>
             <select>
                 <option>1</option>
@@ -56,8 +57,33 @@
             <label for="date">Date Requested</label>
             <input type="date" name="date" id="date" required/>
             <label for="time">Time Requested</label>
-            <input type="time" name="time" id="time" min="10:00" max="21:00" required/>
-            <button>Request Reservation</button>
+            <select id="appointment-time">
+                <option value="">Select an appointment time</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="1:00 PM">1:00 PM</option>
+                <option value="1:30 PM">1:30 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="2:30 PM">2:30 PM</option>
+                <option value="3:00 PM">3:00 PM</option>
+                <option value="3:30 PM">3:30 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+                <option value="4:30 PM">4:30 PM</option>
+                <option value="5:00 PM">5:00 PM</option>
+                <option value="5:30 PM">5:30 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="6:30 PM">6:30 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+                <option value="7:30 PM">7:30 PM</option>
+                <option value="8:00 PM">8:00 PM</option>
+                <option value="8:30 PM">8:30 PM</option>
+                <option value="9:00 PM">9:00 PM</option>
+              </select>   
+            <button type="submit" id="reserve-btn">Request Reservation</button>
         </form>
     </main>
     <footer>
@@ -72,5 +98,25 @@
             <li><a href="thanks.html">Join E-Club</a></li>
         </ul>
     </footer>
+    <!-- Logic for the reservation submit button -->
+    <script>
+        const reserveBtn = document.querySelector("#reserve-btn");
+        const appointmentForm = document.querySelector("#appointment-form");
+      
+        const handleReservation = (event) => {
+          event.preventDefault();
+      
+          // Check if the form is valid
+          if (appointmentForm.checkValidity()) {
+            alert(
+              "Your request has been submitted. We will call you as soon as possible to confirm your reservation. Thanks!"
+            );
+          } else {
+            appointmentForm.reportValidity();
+          }
+        };
+      
+        reserveBtn.addEventListener("click", handleReservation);
+      </script>
 </body>
 </html>
