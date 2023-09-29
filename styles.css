@@ -4,7 +4,7 @@
     --trans-green: rgba(52, 79, 50, 0.9);
     --dark: #333;
     --medium: #aaa;
-    --light: #eeeeff;
+    --light: #f3faf8;
     
   }
 
@@ -220,6 +220,7 @@
       transition: 300ms ;
   }
 
+  /* for clickable images */
   .clickable:hover {
     background-size: 120%;
   }
@@ -385,19 +386,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--light);
 }
 
 .reservations-page form {
     display: flex;
     flex-direction: column;
-    padding: 3vw;
+    padding: 2rem 3vw;
     max-width: 800px;
     border: 1px solid var(--primary);
     border-radius: 10px;
+    box-shadow: 5px 5px 10px #3333;
+    background-color: var(--light);
 }
 
-.reservations-page label, .reservations-page button {
+.reservations-page label {
     margin-top: 10px;
+}
+
+.reservations-page button {
+    margin-top: 2rem;
 }
 
 
